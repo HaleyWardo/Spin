@@ -1,17 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-let resturants = [
-  {
-    name: 'Berrynaked'
-    //going to be adding more information
-  },
-  {
-    name: "Blist'r naan wraps"
-    //going to be adding more information
-  }
-]
+import restaurants from './restaurants';
 
 // setting up the basic application layout
 // testing a few things out
@@ -28,20 +18,37 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Randomize your resturant selection</h1>
+        <h1>Randomize your restaurant selection</h1>
         <button onClick={this.handleButtonClick}>Spin</button>
-        <Resturants />
+        <Restaurants />
       </div>
     );
   }
 }
 
-class Resturants extends React.Component {
+class Restaurants extends React.Component {
   render() {
     return (
       // not sure how we want to setup our class naming convention
-      <div className="spin--resturants"> 
-        
+      <Restaurant />
+    );
+  }
+}
+
+class Restaurant extends React.Component {
+  render() {
+    return (
+      <div className="spin__restaurants">
+        {
+          restaurants.map((restaurant) => {
+          return (
+            <div className="spin__restaurant" key={restaurant.name}>
+              <img className="spin__restaurant--image" src={restaurant.image} alt={restaurant.name} />
+              <h2>{restaurant.name}</h2>
+            </div>
+          )
+          })
+        }
       </div>
     );
   }
