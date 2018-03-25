@@ -3,8 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import restaurants from './restaurants';
 
-// setting up the basic application layout
-// testing a few things out
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -29,7 +27,6 @@ class App extends React.Component {
 class Restaurants extends React.Component {
   render() {
     return (
-      // not sure how we want to setup our class naming convention
       <Restaurant />
     );
   }

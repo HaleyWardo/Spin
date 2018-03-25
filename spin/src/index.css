@@ -15,7 +15,7 @@ h1 {
   padding: 20px;
 }
 
-.spin__restaurant {
+.spin__restaurants {
   display: flex;
   flex-wrap: wrap;
 }
